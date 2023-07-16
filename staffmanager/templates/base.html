@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="(( url_for('static', filename='css/style.css')  ))" type="text/css">
     <title>Staff Manager</title>
 </head>
 <body>
-    HELLO WORLD!
+    <header>
+        <nav class=" deep-orange darken-4">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">Staff Manager</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}"">HOME</a></li>
+                <li><a href="">DEPARTMENT</a></li>
+                <li><a href="">EMPLOYEE</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="">DEPARTMENT</a></li>
+            <li><a href="">EMPLOYEE</a></li>
+          </ul>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="page-footer grey darken-4">
+        <div class="footer-copyright">
+          <div class="container">
+          MILESTONE PROJECT THREE
+          <a class="white-text right" href="https://codeinstitute.net" target="_blank">&copy; Code Institute</a>
+          </div>
+        </div>
+      </footer>
+          
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://kit.fontawesome.com/256864fd36.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

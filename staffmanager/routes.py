@@ -5,4 +5,4 @@ from staffmanager.models import Department, Employee
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("employee.html")
