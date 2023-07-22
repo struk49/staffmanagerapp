@@ -15,7 +15,7 @@
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}"">HOME</a></li>
-                <li><a href="">DEPARTMENT</a></li>
+                <li><a href="{{ url_for('departments') }}">DEPARTMENT</a></li>
                 <li><a href="">EMPLOYEE</a></li>
               </ul>
             </div>
@@ -23,7 +23,7 @@
         
           <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">HOME</a></li>
-            <li><a href="">DEPARTMENT</a></li>
+            <li><a href="{{ url_for('departments') }}">DEPARTMENT</a></li>
             <li><a href="">EMPLOYEE</a></li>
           </ul>
     </header>

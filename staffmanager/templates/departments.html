@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="brown-text text darken-4 center-align">Department</h3>
+
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_department') }}" class="btn-large black-text yellow accent-4">
+            Add Category <i class="fa-solid fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
