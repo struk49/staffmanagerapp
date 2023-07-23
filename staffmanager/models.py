@@ -5,7 +5,7 @@ class Department(db.Model):
     # Schema for the department  model
     id = db.Column(db.Integer, primary_key=True)
     department_name = db.Column(db.String(30), unique=True, nullable=False)
-    employee = db.relationship("Employee", backref="department", cascade="all, delete", lazy=True)
+    employee = db.relationship("Employee", backref="departments", cascade="all, delete", lazy=True)
 
 
     def __repr__(self):

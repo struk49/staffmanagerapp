@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="brown-text text darken-4 center-align">Add Department</h3>
+<h3 class="brown-text text darken-4 center-align">Edit Department</h3>
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="{{ url_for('add_department', department_id=department.id) }}">
+    <form class="col s12" method="POST" action="{{ url_for('edit_department', department_id=department.id) }}">
         <!-- category name -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fa-solid fa-plus-square right black-text yellow accent-4"></i>
-                <input id="department_name" name="department_name" minlength="3" maxlength="25" type="text" class="validate" required>
+                <input id="department_name" name="department_name" value="{{ department.department_name }}" minlength="3" maxlength="25" type="text" class="validate" required>
                 <label for="department_name">Department Name</label>
             </div>
         </div>
@@ -16,13 +16,12 @@
         <div class="row">
             <div class="col s12 center-align">
                 <button type="submit" class="btn-large black-text yellow accent-4">
-                    Add Category <i class="fa-solid fa-plus yellow accent-4""></i>
+                    Edit Category <i class="fa-solid fa-edit yellow accent-4""></i>
                 </button>
             </div>
         </div>
     </form>
 </div>
 
-<
 
 {% endblock %}
