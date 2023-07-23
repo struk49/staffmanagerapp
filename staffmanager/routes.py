@@ -10,7 +10,8 @@ def home():
 
 @app.route("/departments")
 def departments():
-    return render_template("departments.html")
+    departments = list(Department.query.order_by(Department.department_name).all())
+    return render_template("departments.html", departments=departments)
 
 
 @app.route("/add_department", methods=["GET", "POST"])
