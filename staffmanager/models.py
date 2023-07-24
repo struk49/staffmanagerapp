@@ -23,7 +23,7 @@ class Employee(db.Model):
     employee_skills = db.Column(db.String(50), unique=True, nullable=False)
     start_date = db.Column(db.Date, nullable=False)
     
-    department_id = db.Column(db.Integer, db.ForeignKey("department.id", ondelete="CASCADE"), nullable=False)
+    department_id = db.Column(db.Integer, db.ForeignKey("department.id", ondelete="CASCADE"), nullable=True)
 
     def __repr__(self):
         #__repr__ to represent itself in a form of a string

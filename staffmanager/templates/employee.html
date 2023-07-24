@@ -1,5 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="brown-text text darken-4 center-align">EMPLOYEE</h3>
+
+<h3 class="light-blue-text text-darken-4 center-align">Employee</h3>
+
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_employee') }}" class="btn-large light-blue darken-2">
+            Add Employee <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
+
+<ul class="collapsible">
+    {% for employee in employees|sort(attribute="start_date") %}
+    <li>
+        <div class="collapsible-header white-text light-blue darken-4">
+            <i class="fas fa-caret-down"></i>
+            <strong>{{ employee.employee_name }}</strong> : {{ employee.start_date.strftime("%d %B, %Y") }}
+            {% if employee.start_date == True %}
+                <i class="fas fa-exclamation-circle light-blue-text text-lighten-2"></i>
+            {% endif %}
+        </div>
+        <div class="collapsible-body">
+            <strong>{{ employee.department }}</strong>
+            <p>{{ employee.employee_skills }}</p>
+            <p>
+                <a href="{{ url_for('edit_employee', employee_id=employee.id) }}" class="btn green accent-4">Edit</a>
+                <a href="{{ url_for('delete_employee', employee_id=employee.id) }}" class="btn red">Delete</a>
+            </p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
