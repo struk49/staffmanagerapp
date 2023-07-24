@@ -29,14 +29,7 @@
                 <label for="employee_position">Employee Position</label>
             </div>
         </div>
-         <!-- employee skills -->
-         <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                <input id="employee_skills" name="employee_skills" minlength="5" maxlength="25" type="text" class="validate" required>
-                <label for="employee_skills">Employee Skills</label>
-            </div>
-        </div>
+        
         <!-- start date -->
         <div class="row">
             <div class="input-field col s12">
@@ -52,10 +45,10 @@
                 <select id="department_id" name="department_id" class="validate" required>
                     <option value="" disabled selected>Choose Department</option>
                     {% for department in departments %}
-                        <option value="{{ department.id }}">{{ deaprtment.deaprtemnt_name }}</option>
+                        <option value="{{ department.id }}">{{ department.department_name }}</option>
                     {% endfor %}
                 </select>
-                <label for="deaprtment_id">Department</label>
+                <label for="department_id">Department</label>
             </div>
         </div>
         <!-- submit button -->

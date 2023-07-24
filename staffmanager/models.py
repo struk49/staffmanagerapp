@@ -20,13 +20,11 @@ class Employee(db.Model):
     # employee_description = db.column(db.text, nullable=False)
     employee_email = db.Column(db.String(150), unique=True, nullable=False)
     employee_position = db.Column(db.String(20), unique=True, nullable=False)
-    employee_skills = db.Column(db.String(50), unique=True, nullable=False)
     start_date = db.Column(db.Date, nullable=False)
-    
     department_id = db.Column(db.Integer, db.ForeignKey("department.id", ondelete="CASCADE"), nullable=True)
 
     def __repr__(self):
         #__repr__ to represent itself in a form of a string
-        return "#{0} - Employee: {1} | Skills: {2}".format(
-            self.id, self.employee_name, self.employee_skills
+        return "#{0} - Employee: {1} | Email: {2}".format(
+            self.id, self.employee_name, self.employee_email
         )

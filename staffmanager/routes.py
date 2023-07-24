@@ -9,7 +9,7 @@ def home():
     return render_template("employee.html", employees=employees)
 
 
-@app.route("/department")
+@app.route("/departments")
 def departments():
     departments = list(Department.query.order_by(Department.department_name).all())
     return render_template("departments.html", departments=departments)
@@ -51,9 +51,8 @@ def add_employee():
             employee_name=request.form.get("employee_name"),
             employee_email=request.form.get("employee_email"),
             employee_position=request.form.get("employee_position"),
-            employee_skills=request.form.get("employee_skilss"),
             start_date=request.form.get("start_date"),
-            deaprtment_id=request.form.get("deaprtment_id")
+            department_id=request.form.get("department_id")
         )
         db.session.add(employee)
         db.session.commit()
